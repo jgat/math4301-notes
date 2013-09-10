@@ -1,0 +1,96 @@
+\section{Coxeter Groups}
+
+References:
+\begin{itemize}
+\item Bjorner \& Brenti: Combinatorics of Coxeter groups (Springer GTM231, '05)
+\item Bourbaki: Lie groups \& Lie algebras (Chap 4-6)
+\item Cohen: Coxeter groups
+\item Humphreys: Reflection Groups and Coxeter Groups
+\item Davis: The Geometry and Topolology of Coxeter Groups
+\end{itemize}
+
+Let $M$ be an $r \times r$ symmetric matrix with entries $m_{ij}$ in
+$\{1,2,3,\dots\}\cup\{\infty\}$ with $m_{ii} = 1$ and $m_{ij} = m_{ji} > 1$
+for $i \neq j$. Such a matrix is called a {\em Coxeter matrix}.
+For example,
+\[
+    \begin{pmatrix}
+        1 & 3 \\
+        3 & 1
+    \end{pmatrix}
+\]
+Coxeter matrices are often represented as a graph with $r$ labelled vertices
+($1, 2, \dots, r$), and if $m_{ij} \geq 3$, an edge between $i$ and $j$
+with a labelling of the edge by $m_{ij}$. It is standard to drop edge labels
+which are 3. Hence the above example can be expressed as
+
+\begin{center}
+\begin{picture}(2,0.4)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){2}}
+\put(2,0.2){\circle*{0.2}}
+\end{picture}
+\end{center}
+
+Given a Coxeter matrix $M$ (or graph), a {\em Coxeter system} $(W, S)$ of type
+$M$ is a set $S = \{s_1, \dots, s_r\}$ and a group
+\[
+W = \angleb{S \mid (s_i s_j)^{m_{ij}} = 1, \quad 1 \leq i,j \leq r, m_{ij} \neq \infty}.
+\]
+(That is, whenever $m_{ij} \neq \infty$, impose a relation $(s_i s_j)^{m_{ij}} = 1$).
+The group $W$ is called a {\em Coxeter group} (of type $M$). The number $r$ is
+known as the {\em rank} of $W$. Note that $s_i^2 = 1$ for all $1 \leq i \leq r$.
+\\
+
+Example: For rank 1, there is only one Coxeter group, $M = \left( 1 \right)$,
+with the trivial graph:
+
+\begin{center}
+\begin{picture}(1,0.4)
+\put(0.5,0.2){\circle*{0.2}}
+\end{picture}
+\end{center}
+
+and the corresponding Coxeter group
+$W = \angleb{s \mid s^2 = 1} \cong \Z_2 = \Z/2\Z$.
+
+For rank 2, we have first,
+\[
+    M = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix},
+\]
+with corresponding graph
+\begin{center}
+\begin{picture}(2,0.4)
+\put(0,0.2){\circle*{0.2}}
+\put(2,0.2){\circle*{0.2}}
+\end{picture}
+\end{center}
+and corresponding group
+\[
+    W = \angleb{s, t \mid s^2 = t^2 = (st)^2 = 1} \cong \Z_2 \times \Z_2
+\]
+(Note that $(s_i s_j)^{m_{ij}} = 1$ implies that $(s_j s_i)^{m_{ij}} = 1$. Why:
+$(s_j s_i)^{m_{ij}} = (s_j s_i)^{m_{ij}} s_j^2 = s_j (s_i s_j)^{m_{ij}} s_j = s_j^2 = 1$)
+We will later show that if a Coxeter system has a disconnected graph, then the
+Coxeter group will be the direct product of the corresponding groups for each
+component; hence we will focus on connected graphs.
+We also have
+\[
+    M = \begin{pmatrix} 1 & m \\ m & 1 \end{pmatrix}, \quad m \geq 3,
+\]
+and
+\[
+    W = \angleb{s, t \mid s^2 = t^2 = (st)^m = 1}.
+\]
+This is known as the {\em dihedral} group of order $2m$ ($D_m$ / $D_{2m}$ /
+$I_2(m)$). The dihedral group is the symmetry group of the regular $m$-gon.
+For example, $I_2(3)$ is the symmetry group of the triangle, where
+$s, t, sts = tst$ are reflections and $st, ts$ are rotations.
+$I_2(4)$ has reflections $s, t, sts = s(ts)^2 = (st)^2s, tst
+= t(st)^2 = (ts)^2 t$.
+
+Note that a word of odd length corresponds to a reflection, and a word of
+even length corresponds to a rotation; also note that the
+relation $(st)^m = 1$ embodies the ``rotate $m$ times to get the identity''
+property of the $m$-gon.
+

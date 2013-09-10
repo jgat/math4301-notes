@@ -1,0 +1,113 @@
+\section{Dihedral Groups}
+Recall that a Coxeter group is of the form
+\[
+    W = \angleb{S \mid (s_i s_j)^{m_{ij}} = 1,
+    1 \leq i \leq j \leq r, m_{ij} \neq \infty},
+\]
+with the associated matrix $M = (m_{ij})$ where $m_{ii} = 1$ and $M^T = M$.
+A special case is, for $m > 2$,
+\[
+    I_2(m) = \angleb{s, t \mid s^2 = t^2 = (st)^m = 1},
+\]
+a Coxeter group of rank 2. We saw that
+$I_2(3)$ is the group of symmetries of the equilateral triangle, and
+$I_2(4)$ is the group of symmetries of the square.
+%\begin{theorem} \label{thm:dihedral-group}
+We claim that $I_2(m)$ is a group of order $2m$ consisting of $m$
+reflections and $m$ rotations of the regular $m$-gon.
+%\end{theorem}
+
+
+First, for a vector $\alpha \in \R^n$, let $H_\alpha$ denote the hyperplane with
+normal $\alpha$, and denote reflection in $H_\alpha$ by $r_\alpha$. Now, for
+any vector $\lambda$,
+\begin{equation} \label{eq:reflection}
+    r_\alpha(\lambda) = \lambda - \frac{2(\alpha,\lambda) \alpha}{(\alpha,\alpha)},
+\end{equation}
+where $(a, b)$ denotes the inner product (vector dot product). Note that
+$r_\alpha(\lambda) = \lambda$ for every $\lambda \in H_\alpha$, and
+$r_\alpha(\alpha) = \alpha - \frac{2(\alpha,\alpha)\alpha}{(\alpha,\alpha)}
+= -\alpha$ as expected. Since we have verified this for a hyperplane of
+codimension 1 and for a vector normal to the hyperplane, the result is true for
+all vectors (by Linear Algebra).
+
+\begin{proof}
+Let $s$ and $t$ be reflections, where the axes of symmetry have an angle of
+$\theta = \frac{\pi}{m}$, i.e. $s := r_{(1,0)}$ and
+$t := r_{(\cos \theta,-\sin \theta)}$. % TODO picture
+Then, $s(1,0) = (-1,0)$ and $s(0,1) = (0,1)$, so
+\[
+    \hat{s} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
+\]
+is a matrix representation of $s$, and
+\[
+    \hat{t} = \begin{pmatrix} -\cos 2\theta & \sin 2\theta \\
+        \sin 2\theta & \cos 2\theta \end{pmatrix}
+\]
+is a matrix representation of $t$ (Exercise).
+
+If we can show that $st$ is a rotation over $\frac{2\pi}{m}$, then
+$(st)^k$ will be a rotation over $\frac{2\pi k}{m}$, which will give $m$
+distinct rotations. Now,
+\[
+    \hat{s} \hat{t} = \begin{pmatrix}
+        \cos 2\theta & -\sin 2\theta \\
+        \sin 2\theta & \cos 2\theta \end{pmatrix},
+\]
+which is a rotation matrix for rotation over $2\theta$ (Exercise).
+Then $(\hat{s} \hat{t})^k$ is a rotation by $2k\theta$ (easy to see geometrically,
+or show inductively that $(\hat{s}\hat{t})^k$ is a rotation matrix).
+
+It remains to show that there are $m$ distinct words of odd length, and they
+are all reflections. WLOG, we can say that all words of odd length are of the
+form $t(st)^{k-1}$ for some $k=1,2,\dots,m$, hence there are $m$ distinct words
+of odd length. Now,
+\[
+    \hat{t}(\hat{s}\hat{t})^k
+    = \begin{pmatrix} -\cos 2\theta & \sin 2\theta \\
+        \sin 2\theta & \cos 2\theta \end{pmatrix}
+    \begin{pmatrix}
+        \cos 2\theta(k-1) & -\sin 2\theta(k-1) \\
+        \sin 2\theta(k-1) & \cos 2\theta(k-1) \end{pmatrix}
+    = \begin{pmatrix}
+        -\cos(2k\theta) & \sin 2k\theta \\
+        \sin 2k\theta & \cos 2k\theta
+    \end{pmatrix}
+\]
+(Exercise), so $t(st)^{k-1} := r_{(\cos k\theta, -\sin k\theta)}$. Hence the
+$m$ words of odd length are all reflections.
+\end{proof}
+
+Finally, we consider the remaining Coxeter group of rank 2, given by
+\[
+    M = \begin{pmatrix} 1 & \infty \\ \infty & 1 \end{pmatrix},
+\]
+with corresponding graph
+\begin{center}
+\begin{picture}(2,0.5)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){2}}
+\put(0.85,0.35){$\infty$}
+\put(2,0.2){\circle*{0.2}}
+\end{picture}
+\end{center}
+and corresponding group
+\[
+    I_2(\infty) = \angleb{s,t \mid s^2 = t^2 = 1}.
+\]
+Elements of this group, known as the $\infty$-dihedral group are the words of
+the form: $1, s, t, st, ts, sts, tst, \dots$. Again this group has a geometric
+interpretation in terms of reflections (etc.).
+Before we can describe this, we need some more notation.
+
+Let $V = \R^n$ and for $\alpha \in V$ let $H_\alpha$ denote the hyperplane
+perpendicular to $\alpha$. Algebraically, $H_\alpha = \{\lambda \in V :
+(\lambda, \alpha) = 0\}$.
+As we have seen, the reflextion $r_\alpha$ in $H_\alpha$ is given by its
+action on $\lambda \in V$ as
+\[
+    r_\alpha(\lambda) = \lambda - \frac{2(\alpha,\lambda)}{(\alpha,\alpha)} \alpha
+    = \lambda - \frac{2(\lambda, \alpha)}{||\alpha||^2} \alpha
+    = \lambda - (\lambda, \alpha^V)\alpha,
+\]
+where $\alpha^V = \frac{2\alpha}{||\alpha||^2}$ (a covector).
