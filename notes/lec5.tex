@@ -1,0 +1,139 @@
+\newpage
+\section{Lecture 5}
+
+% TODO draw number line
+
+Let $s = r_0$, $t = r_1$, in the group $W = \angleb{s, t \mid s^2 = t^2 = 1}$.
+From last time, we had the following claims:
+\\
+
+\noindent
+Claim 1: $r_k = s(st)^k$, $t_{2k} = (ts)^k$, $k \in \Z$.
+\\
+
+\noindent
+Claim 2: $\tilde{A}_1 = A_1 \ltimes T$, $A_1 = \{1, r_0\}$, $T = \{t_{2k} : k \in
+\Z\}$.
+\\
+
+\begin{proof}
+Recall that
+\[ r_{a,k}(\lambda) = \lambda - \{(\lambda, \alpha) - k\} \alpha^V, \]
+if $\alpha = 1$, then $\alpha^V = 2$ (since the dot product must be 2), so
+\[
+    r_{k} = \lambda - 2 \{\lambda-k\} = 2k-\lambda.
+\]
+Then,
+\[
+    ts(\lambda) = r_1 r_0(\lambda) = r_1(-\lambda) = 2+\lambda = t_2(\lambda),
+\]
+thus $ts = t_2$, so $(ts)^k = t_{2k}$. Furthermore,
+\[
+    s(st)^k(\lambda) = r_0 t_{-2k}(\lambda) = r_0(\lambda-2k) = -\lambda + 2k = r_k(\lambda),
+\]
+so $s(st)^k = r_k$
+\end{proof}
+
+Note that
+\[
+    r_{\alpha,\kappa}(\lambda + \mu) \neq r_{\alpha,\kappa}(\lambda)
+    + r_{\alpha,\kappa}(\mu),
+\]
+%\[
+%    r_{\alpha,\kappa} t_{\lambda} r_{\alpha, \kappa}(\mu)
+%    =  r_{\alpha, \kappa}
+%\]
+instead,
+\begin{align*}
+    r_{\alpha, \kappa} (\lambda+\mu)
+    &= \lambda + \mu - \{(\lambda + \mu, \alpha) \alpha^V - \kappa\} \\
+    &= \lambda + \mu - \{(\lambda, \alpha) \alpha^V + (\mu, \alpha) \alpha^V - \kappa\} \\
+    &= r_{\alpha,\kappa}(\lambda) + r_{\alpha, \kappa}(\mu) - \kappa \alpha^V
+\end{align*}
+Now,
+\begin{align*}
+    r_{\alpha,\kappa} t_{\lambda} r_{\alpha, \kappa}(\mu)
+    &= r_{\alpha, \kappa}(\lambda + r_{\alpha, \kappa}(\mu)) \\
+    &= r_{\alpha, \kappa}(\lambda) + \mu - \kappa \alpha^V \\
+    &= r_{\alpha,0}(\lambda) + \mu,
+\end{align*}
+so $r_{\alpha, \kappa} t_\lambda r_{\alpha, \kappa} = t_{r_\alpha(\lambda)}$.
+\\
+
+\subsection{Semi-direct products}
+
+Recall that, for a group $G$, if $K \leq G$, $N \triangleleft G$,
+$K \cap N = \{1\}$, and $G = NK$,
+then we say $G = K \ltimes N$ or $G = N \rtimes K$.
+Now, consider claim 2:
+\[
+    \tilde{A}_1 = \{t_{2k}, r_k \mid k \in \Z\},
+\]
+and consider the subgroups
+\[
+    N = T = \{t_{2k} : k \in \Z\}, K = \{1, r_0\} = A_1.
+\]
+Note that $r_k = r_0 t_{-2k}$, so $\tilde{A}_1 = A_1T$. Thus, claim 2 holds.
+
+\subsection{Symmetric Groups}
+
+Before moving to the general theory, we will discuss one more important example
+of a finite reflection group (Coxeter group), the symmetric group $S_n$, also
+denoted $A_{n-1}$ (not to be confused with the alternating group!)
+Let us define $S_n$ to be
+\[
+    S_n = \angleb{s_1, \dots, s_{n-1} \mid s_i^2 = 1,
+    (s_i s_{i+1})^3 = 1,
+    (s_i s_j)^2 = 1, |i-j| > 1}.
+\]
+Clearly the associated Coxeter matrix is
+\[
+    M = \begin{pmatrix}
+        1 & 3 & 2 & \cdots & 2 \\
+        3 & 1 & 3 & \ddots & \vdots \\
+        \vdots & \vdots & \ddots & \ddots & 3 \\
+        2 & 2 & \cdots & 3 & 1
+    \end{pmatrix}
+\]
+with Coxeter graph
+% TODO a path 1 - 2 - 3 - \dots - n-1
+
+The most common description of $S_n$ is as the group of permutations on $n$
+letters with $s_i$ acting as ``adjacent'' transpositions, interchanging the
+letters in positions $i$ and $i+1$ (i.e. the cycle $(i \;\; i+1)$).
+For example, $s_2(2,3,6,4,5,1) = (2,6,3,4,5,1)$.
+The relation $(s_i s_j)^2 = 1$ for $|i-j|>1$ may be recast as the commutation
+relation $s_i s_j = s_j s_i$. Finally, $(s_i s_{i+1})^3 = 1$ can be restated
+as $s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}$, known as Artin's braid relation.
+
+Of course, $S_n$ can also be interpreted as a reflection group. Let $V = \R^n$
+and $s_i$ the reflection in the hyperplane $H_{\varepsilon_i - \varepsilon_{i+1}}
+= H_{\alpha_i}$, where $\varepsilon_i$ is the $i^{\rm th}$ basis vector in the
+standard basis. Then, it holds that
+\[
+    s_i(\varepsilon_k) = \begin{cases}
+    \varepsilon_k & k \neq i, i+1 \\
+    \varepsilon_{i+1} & k = i \\
+    \varepsilon_{i} & k = i+1 \\
+    \end{cases}
+\]
+so that indeed $s_i^2 = 1$, $s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}$, and
+$s_i s_j = s_j s_i$ for $|i-j|>1$. (Exercise: show this).
+
+Note that $\varepsilon_1 + \dots + \varepsilon_n$ is fixed by the action of
+$A_{n-1} (= S_n)$, and no other vector linearly independent to this is fixed,
+hence $A_{n-1}$ only acts on an $(n-1)$-dimensional subspace of $\R^n$, namely
+$\{\lambda \in \R^n \mid (\lambda, \varepsilon_1 + \dots + \varepsilon_n) = 0\}$.
+For example in the case of $S_3 = A_2$,
+
+% TODO picture
+%    H_\alpha_1 = H_e2-e3
+% \  |
+%  \ |  / H_\alpha_2 = ...
+%   \|/
+%    *
+%   /|\
+% . ... \ H_e1-e3
+
+Now, $A_{n-1}$ is the symmetry group of the $(n-1)$-simplex, where for instance
+the 2-simplex is the triangle, the 3-simplex is the tetrahedron, and so on.
