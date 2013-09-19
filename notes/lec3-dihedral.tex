@@ -34,7 +34,22 @@ all vectors (by Linear Algebra).
 \begin{proof}
 Let $s$ and $t$ be reflections, where the axes of symmetry have an angle of
 $\theta = \frac{\pi}{m}$, i.e. $s := r_{(1,0)}$ and
-$t := r_{(\cos \theta,-\sin \theta)}$. % TODO picture
+$t := r_{(\cos \theta,-\sin \theta)}$:
+
+\begin{center}
+\begin{picture}(4,4)
+\put(2,0.5){\line(0,1){3}}
+\put(1.9,3.7){$s$}
+\put(2,2){\vector(1,0){1}}
+\put(3.1,1.9){$(1,0)$}
+\put(1,0.5){\line(2,3){2}}
+\put(3.2,3.7){$t$}
+\put(2,2){\vector(3,-2){0.74}}
+\put(2.8,1.2){$(\cos \theta, -\sin \theta)$}
+\put(2.07,2.4){$\theta$}
+\end{picture}
+\end{center}
+
 Then, $s(1,0) = (-1,0)$ and $s(0,1) = (0,1)$, so
 \[
     \hat{s} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
@@ -110,4 +125,4 @@ action on $\lambda \in V$ as
     = \lambda - \frac{2(\lambda, \alpha)}{||\alpha||^2} \alpha
     = \lambda - (\lambda, \alpha^V)\alpha,
 \]
-where $\alpha^V = \frac{2\alpha}{||\alpha||^2}$ (a covector).
+where $\alpha^V = \frac{2\alpha}{||\alpha||^2}$.% (a covector).
