@@ -1,6 +1,29 @@
 \section{Lecture 5}
 
-% TODO draw number line
+Consider the integer number line,
+
+\begin{center}
+\begin{picture}(8,1)
+\put(0,0.5){\dots}
+\put(0.5,0.5){\line(1,0){7}}
+\put(7.6,0.5){\dots}
+\put(1,0.5){\circle*{0.1}}
+\put(2,0.5){\circle*{0.1}}
+\put(3,0.5){\circle*{0.1}}
+\put(4,0.5){\circle*{0.1}}
+\put(5,0.5){\circle*{0.1}}
+\put(6,0.5){\circle*{0.1}}
+\put(7,0.5){\circle*{0.1}}
+
+\put(0.7,0.7){$-3$}
+\put(1.7,0.7){$-2$}
+\put(2.7,0.7){$-1$}
+\put(3.9,0.7){$0$}
+\put(4.9,0.7){$1$}
+\put(5.9,0.7){$2$}
+\put(6.9,0.7){$3$}
+\end{picture}
+\end{center}
 
 Let $s = r_0$, $t = r_1$, in the group $W = \angleb{s, t \mid s^2 = t^2 = 1}$.
 From last time, we had the following claims:
@@ -11,8 +34,8 @@ Claim 1: $r_k = s(st)^k$, $t_{2k} = (ts)^k$, $k \in \Z$.
 \\
 
 \noindent
-Claim 2: $\tilde{A}_1 = A_1 \ltimes T$, $A_1 = \{1, r_0\}$, $T = \{t_{2k} : k \in
-\Z\}$.
+Claim 2: $\tilde{A}_1 = A_1 \ltimes T$, where $A_1 = \{1, r_0\}$,
+$T = \{t_{2k} : k \in \Z\}$.
 \\
 
 \begin{proof}
@@ -96,6 +119,15 @@ Clearly the associated Coxeter matrix is
     \end{pmatrix}
 \]
 with Coxeter graph
+\begin{center}
+\begin{picture}(7,0.4)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){2}}
+\put(2,0.2){\circle*{0.2}}
+\put(2,0.2){\line(1,0){2}}
+\put(4,0.2){\circle*{0.2}}
+\end{picture}
+\end{center}
 % TODO a path 1 - 2 - 3 - \dots - n-1
 
 The most common description of $S_n$ is as the group of permutations on $n$
