@@ -30,7 +30,8 @@ From last time, we had the following claims:
 \\
 
 \noindent
-Claim 1: $r_k = s(st)^k$, $t_{2k} = (ts)^k$, $k \in \Z$.
+Claim 1: $r_k = s(st)^k$, $t_{2k} = (ts)^k$, $k \in \Z$, where $r_k$ is reflection
+about $k$, and $t_{2k}$ is a transation by $2k$.
 \\
 
 \noindent
@@ -41,7 +42,8 @@ $T = \{t_{2k} : k \in \Z\}$.
 \begin{proof}
 Recall that
 \[ r_{a,k}(\lambda) = \lambda - \{(\lambda, \alpha) - k\} \alpha^V, \]
-if $\alpha = 1$, then $\alpha^V = 2$ (since the dot product must be 2), so
+if $\alpha = 1$, then $\alpha^V = 2$ (since the dot product between
+$\alpha$ and $\alpha^V$ must be 2), so
 \[
     r_{k} = \lambda - 2 \{\lambda-k\} = 2k-\lambda.
 \]
@@ -53,7 +55,7 @@ thus $ts = t_2$, so $(ts)^k = t_{2k}$. Furthermore,
 \[
     s(st)^k(\lambda) = r_0 t_{-2k}(\lambda) = r_0(\lambda-2k) = -\lambda + 2k = r_k(\lambda),
 \]
-so $s(st)^k = r_k$
+so $s(st)^k = r_k$.
 \end{proof}
 
 Note that
@@ -126,9 +128,11 @@ with Coxeter graph
 \put(2,0.2){\circle*{0.2}}
 \put(2,0.2){\line(1,0){2}}
 \put(4,0.2){\circle*{0.2}}
+\put(4,0.2){\line(1,0){2}}
+\put(6,0.2){\circle*{0.2}}
+\put(6.3,0.2){\dots}
 \end{picture}
 \end{center}
-% TODO a path 1 - 2 - 3 - \dots - n-1
 
 The most common description of $S_n$ is as the group of permutations on $n$
 letters with $s_i$ acting as ``adjacent'' transpositions, interchanging the
@@ -149,15 +153,17 @@ standard basis. Then, it holds that
     \varepsilon_{i} & k = i+1 \\
     \end{cases}
 \]
-so that indeed $s_i^2 = 1$, $s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}$, and
+That is, elements of $A_{n-1}$ permute the basis elements of $\R^n$, so that
+indeed $s_i^2 = 1$, $s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}$, and
 $s_i s_j = s_j s_i$ for $|i-j|>1$. (Exercise: show this).
 
 Note that $\varepsilon_1 + \dots + \varepsilon_n$ is fixed by the action of
 $A_{n-1} (= S_n)$, and no other vector linearly independent to this is fixed,
 hence $A_{n-1}$ only acts on an $(n-1)$-dimensional subspace of $\R^n$, namely
 $\{\lambda \in \R^n \mid (\lambda, \varepsilon_1 + \dots + \varepsilon_n) = 0\}$.
-For example in the case of $S_3 = A_2$,
 
+(TODO: draw a picture of the three hyperplanes in $A_2 = S_3$)
+%For example in the case of $S_3 = A_2$,
 % TODO picture
 %    H_\alpha_1 = H_e2-e3
 % \  |
