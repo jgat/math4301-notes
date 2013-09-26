@@ -1,5 +1,7 @@
 \section{Lecture 5}
 
+\subsection{Affine Reflections}
+
 Consider the integer number line,
 
 \begin{center}
@@ -63,11 +65,7 @@ Note that
     r_{\alpha,\kappa}(\lambda + \mu) \neq r_{\alpha,\kappa}(\lambda)
     + r_{\alpha,\kappa}(\mu),
 \]
-%\[
-%    r_{\alpha,\kappa} t_{\lambda} r_{\alpha, \kappa}(\mu)
-%    =  r_{\alpha, \kappa}
-%\]
-instead,
+instead it holds that,
 \begin{align*}
     r_{\alpha, \kappa} (\lambda+\mu)
     &= \lambda + \mu - \{(\lambda + \mu, \alpha) \alpha^V - \kappa\} \\
@@ -82,7 +80,6 @@ Now,
     &= r_{\alpha,0}(\lambda) + \mu,
 \end{align*}
 so $r_{\alpha, \kappa} t_\lambda r_{\alpha, \kappa} = t_{r_\alpha(\lambda)}$.
-\\
 
 \subsection{Semi-direct products}
 
@@ -161,6 +158,19 @@ Note that $\varepsilon_1 + \dots + \varepsilon_n$ is fixed by the action of
 $A_{n-1} (= S_n)$, and no other vector linearly independent to this is fixed,
 hence $A_{n-1}$ only acts on an $(n-1)$-dimensional subspace of $\R^n$, namely
 $\{\lambda \in \R^n \mid (\lambda, \varepsilon_1 + \dots + \varepsilon_n) = 0\}$.
+
+For example, in the case of $S_3 = A_2$,
+\begin{center}
+\begin{picture}(5,5)(-2.5,-2.5)
+\put(-2.5,-2.5){\line(1,0){5}}
+\put(-2.5,2.5){\line(1,0){5}}
+
+%\put(1.5,0.5){\line(1,2){2}}
+%\put(3.5,0.5){\line(-1,2){2}}
+%\put(0.5,2.5){\line(1,0){4}}
+%\put(4.1,2.6){$H_{\varepsilon_1 - \varepsilon_3}$}
+\end{picture}
+\end{center}
 
 (TODO: draw a picture of the three hyperplanes in $A_2 = S_3$)
 %For example in the case of $S_3 = A_2$,
