@@ -1,0 +1,86 @@
+\section{Lecture 11}
+
+Theorem \ref{thm10} can be restated as ``Let $w = s_1 \dots s_k$
+($s_i$ simple) such that $w$ is not reduced. ...''.
+
+\begin{proposition} \label{prop12}
+Let $w = s_1 \dots s_r$ be reduced. Then, $\Phi^+(w) =
+\{ s_r \dots s_{i+1} (\alpha_i) \mid 1 \leq i \leq r\}$.
+\end{proposition}
+
+For example, in $A_2$ with simple roots $s = s_\alpha, t = s_\beta$,
+\begin{itemize}
+\item For $w = 1$, $\Phi^+(w) = \emptyset$,
+\item For $w = s$, $\Phi^+(w) = \{\alpha\}$,
+\item For $w = t$, $\Phi^+(w) = \{\beta\}$,
+\item For $w = ts = ts \cdot 1$, we have $1(\alpha) = \alpha$
+and $s(\beta) = \alpha+\beta$, so
+$\Phi^+(w) = \{\alpha, \alpha + \beta\}$,
+\item For $w = st$, we have $1(\beta) = \beta$
+and $t(\alpha) = \alpha+\beta$, so
+$\Phi^+(w) = \{\beta, \alpha + \beta\}$,
+\item For $w = sts$, we have $1(\alpha) = \alpha$,
+$s(\beta) = \alpha+\beta$, and
+$st(\alpha) = \beta$,
+so $\Phi^+(w) = \{\alpha, \alpha + \beta, \beta\}$.
+\end{itemize}
+
+\begin{proof}[Proof of Proposition \ref{prop12}]
+Since $n(w) = l(w) = r$, if we can show that
+\[
+\Phi^+(w) \subseteq \{ s_r \dots s_{i+1} (\alpha_i) \mid 1 \leq i \leq r\},
+\]
+then we are done.
+
+Let $\gamma \in \Phi^+(w)$, i.e. $\gamma \in \Phi^+$ and $w(\gamma) \in \Phi^-$.
+Hence there exists an $i \leq r$ such that
+\[
+    \lambda = s_{i+1} \dots s_r (\gamma) \in \Phi^+
+\quad \text{ but } \quad
+    s_i(\lambda) = s_{i} \dots s_r (\gamma) \in \Phi^-.
+\]
+Hence, $\lambda = \alpha_i = s_{i+1} \dots s_r (\gamma) $, hence
+$\gamma = s_r \dots s_{i+1}(\alpha_i)$.
+\end{proof}
+
+\begin{theorem}[Exchange condition] \label{thm13}
+Let $w = s_1 \dots s_k$. If $l(ws) < l(w)$ then there exists an $i$ such that
+$w = s_1 \dots \hat{s_i} \dots s_k s$.
+\end{theorem}
+
+For example, in $A_2$, consider the word $w = stst$. We know that
+$w = ts$, $l(w) = 2$. Now,
+$ws = ststs (= sttst = t)$,
+so $l(ws) = 1$. Then, $w = s \hat{t} sts = s^2 ts = ts$.
+
+\begin{proof}[Proof of Theorem \ref{thm13}]
+Let $w = s_1 \dots s_k$ where $l(ws) < l(w) = n(w)$. By Proposition \ref{9.1},
+$w(\alpha) \in \Phi^-$ (where $s = s_\alpha$), so that there must exist an $i$
+such that $\lambda := s_{i+1} \dots s_k(\alpha) \in \Phi^+$ but
+$s_i(\lambda) \in \Phi^-$, so $\lambda = \alpha_i = s_{i+1} \dots s_k(\alpha)$.
+
+Recall $w s_\alpha w^{-1} = s_{w(\alpha)}$, so
+\[
+    s_{i+1} \dots s_k \cdot s \cdot s_k \dots s_{i+1} = s_{\alpha_i} = s_i.
+\]
+Then,
+\[
+    w s \cdot s_k \dots s_{i+1}
+    = s_1 \dots s_i s_{i+1} \dots s_k \cdot s \cdot s_k \dots s_{i+1}
+    = s_1 \dots s_{i-1},
+\]
+so
+\[
+    w = s_1 \dots s_{i-1} s_{i+1} \dots s_k s.
+\]
+\end{proof}
+
+We now state the main theorem:
+
+\begin{theorem} \label{thm14}
+Every finite reflection group $W$ is a Coxeter group.
+\end{theorem}
+
+The issue to consider is the following question: Is it possible to have a
+relation $s_1 s_2 \dots s_k = 1$ that cannot be derived from the relations
+$(s_\alpha s_\beta)^{m_{\alpha \beta}} = 1$?
