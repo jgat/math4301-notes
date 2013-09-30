@@ -74,7 +74,7 @@ spans $\Phi$, and each root $\beta \in \Phi$ can be written as
 \]
 with all $c_\alpha \geq 0$ or all $c_\alpha \leq 0$. Roots in $\Delta$ are
 called {\em simple roots}, and roots with positive/negative height are called
-positive/negative rppts. Here,
+positive/negative roots. Here,
 ${\rm height}(\beta)= {\rm ht}(\beta) = \sum_{\alpha \in \Delta} c_\alpha$.
 Roots with positive height form a set $\Phi^+$, and roots with negative height
 form a set $\Phi^-$.
@@ -96,9 +96,9 @@ are connected iff $(\alpha, \beta) < 0$.)
 
 \begin{proof}[Proof of Lemma \ref{7.1}]
 Assume towards contradiction that $(\alpha, \beta) > 0$, i.e.
-$(\beta, \alpha^V) > 0$. Then,
+$(\beta, \alpha^\vee) > 0$. Then,
 \[
-    s_\alpha(\beta) = \beta - (\beta, \alpha^V) \alpha = \beta - k\alpha,
+    s_\alpha(\beta) = \beta - (\beta, \alpha^\vee) \alpha = \beta - k\alpha,
 \]
 for some $k > 0$. However, $s_\alpha(\beta) \in \Phi$, but its expression in
 terms of base elements contains positive and negative coefficients. Thus,
@@ -123,7 +123,7 @@ For example, in $A_2$ above,
 \begin{proof}[Proof of Lemma \ref{7.2}]
 Let $\beta \in \Phi^+ \setminus \{\alpha\}$. Then,
 \begin{align*}
-    s_\alpha(\beta) &= \beta - (\beta, \alpha^V) \alpha \\
+    s_\alpha(\beta) &= \beta - (\beta, \alpha^\vee) \alpha \\
     &= \sum_{\gamma \in \Delta, \gamma \neq \alpha}
         c_{\gamma} \gamma + k\alpha    \quad (k \in \R, \textrm{ at least one } c_\gamma \neq 0),
 \end{align*}

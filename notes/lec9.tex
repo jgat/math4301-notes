@@ -1,4 +1,4 @@
-\section{Lecture 9}
+\section{Reduced Words and Word Length}
 
 \subsection{Linear Algebra Intermezzo}
 
@@ -41,7 +41,7 @@ that there are six words,
 \put(5,3){$t$}
 \put(3,2){$ts$}
 \put(5,2){$st$}
-\put(3.9,1){$sts=tst$}
+\put(3.9,1){$sts(=tst)$}
 
 \put(3.9,3.9){\line(-1,-1){0.6}}
 \put(4.25,3.9){\line(1,-1){0.6}}
@@ -73,7 +73,9 @@ If this were the case, then
 w = s_\alpha^2 \dots s_r = s_\alpha (s_\alpha s_1 \dots s_l)
 s_{l+1} \dots s_r = s_\alpha s_{l+1} \dots s_r,
 \]
-so $l(w) \leq l(w)-l+1$, so $l = 1$ and $s_1 = s_\alpha$.
+so $l(w) \leq l(w)-l+1$, so $l = 1$ and $s_1 = s_\alpha$. So no, prepending a
+reduced word with a simple reflection will cancel out at most the first simple
+reflection of the word.
 \\
 
 Let $\Phi^+(w) = \Phi^+ \cap w^{-1}(\Phi^-)$, that is, the set of positive roots
