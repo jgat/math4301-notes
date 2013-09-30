@@ -1,4 +1,4 @@
-\section{Lecture 5}
+\section{Affine Reflections and $I_2(\infty)$}
 
 \subsection{Affine Reflections}
 
@@ -159,22 +159,35 @@ $A_{n-1} (= S_n)$, and no other vector linearly independent to this is fixed,
 hence $A_{n-1}$ only acts on an $(n-1)$-dimensional subspace of $\R^n$, namely
 $\{\lambda \in \R^n \mid (\lambda, \varepsilon_1 + \dots + \varepsilon_n) = 0\}$.
 
-For example, in the case of $S_3 = A_2$,
-%\begin{center}
-%\begin{picture}(5,5)(-2.5,-2.5)
-%\put(-2.5,-2.5){\line(1,0){5}}
-%\put(-2.5,2.5){\line(1,0){5}}
+\newpage
 
-%\put(1.5,0.5){\line(1,2){2}}
-%\put(3.5,0.5){\line(-1,2){2}}
-%\put(0.5,2.5){\line(1,0){4}}
-%\put(4.1,2.6){$H_{\varepsilon_1 - \varepsilon_3}$}
-%\end{picture}
-%\end{center}
+For example, in the case of $S_3 = A_2$, we have reflection in the three
+hyperplanes (planes) below
+(note that this is a 2-dimensional projection of $\R^3$, where the lines
+$H_\alpha$ are planes in $\R^3$):
+\begin{center}
+\begin{picture}(5,5)
+\put(2.5,2.5){\vector(1,0){1}}
+%\put(2.5,2.5){\vector(-1,0){1}}
+\put(2.5,2.5){\vector(1,2){0.4472}}
+\put(2.5,2.5){\vector(-1,2){0.4472}}
+%\put(2.5,2.5){\vector(1,-2){0.4472}}
+%\put(2.5,2.5){\vector(-1,-2){0.4472}}
 
-(TODO: draw a picture of the three hyperplanes in $A_2 = S_3$)
-%For example in the case of $S_3 = A_2$,
-% TODO picture
+\put(3.6,2.5){$\varepsilon_2 - \varepsilon_3$}
+\put(1.0,3.5){$\varepsilon_1 - \varepsilon_2$}
+\put(3.0,3.5){$\varepsilon_1 - \varepsilon_3$}
+
+\put(2.5,0.5){\line(0,1){4}}
+\put(4.5,1.5){\line(-2,1){4}}
+\put(0.5,1.5){\line(2,1){4}}
+
+\put(4.6,1.2){$H_{\varepsilon_1 - \varepsilon_3}$}
+\put(4.6,3.6){$H_{\varepsilon_1 - \varepsilon_2}$}
+\put(2.4,4.7){$H_{\varepsilon_2 - \varepsilon_3}$}
+\end{picture}
+\end{center}
+
 %    H_\alpha_1 = H_e2-e3
 % \  |
 %  \ |  / H_\alpha_2 = ...
@@ -183,5 +196,6 @@ For example, in the case of $S_3 = A_2$,
 %   /|\
 % . ... \ H_e1-e3
 
-Now, $A_{n-1}$ is the symmetry group of the $(n-1)$-simplex, where for instance
+Now, $A_{n-1}$ is the symmetry group of the $(n-1)$-simplex, the generalisation
+of the tetrahedron to $n-1$ dimensions, where for instance
 the 2-simplex is the triangle, the 3-simplex is the tetrahedron, and so on.
