@@ -7,6 +7,11 @@
 \usepackage[lmargin=3cm,rmargin=3cm]{geometry}
 \usepackage{hyperref}
 
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+  \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
 \setlength{\unitlength}{1cm}
 
 \newtheorem{theorem}{Theorem}
@@ -28,7 +33,7 @@ Notes taken by Jackson Gatenby\\
 MATH4301 Advanced Algebra\\
 The University of Queensland\\
 \\
-Version 0.11.0}
+Version 0.11.1}
 
 \begin{document}
 \maketitle
@@ -48,10 +53,8 @@ Version 0.11.0}
 
 \input{notes/lec6}
 \input{notes/lec7}
-\newpage
 \input{notes/lec8}
 \input{notes/lec9}
-\newpage
 \input{notes/lec10}
 \input{notes/lec11}
 
