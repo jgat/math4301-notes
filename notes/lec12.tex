@@ -1,11 +1,12 @@
 \section{Every finite reflection group is a Coxeter group}
 
-\begin{proof}[Proof of Theorem \ref{thm14}]
+%\begin{proof}[Proof of Theorem \ref{thm14}]
+{\em Proof of Theorem \ref{thm14}.}
 We can fix a simple system $\Delta$ such that
 $W = \angleb{s_\alpha, \alpha \in \Delta \mid \text{``relations''}}$. We know
 that $s_\alpha s_\beta$ must have finite order, say $m_{\alpha,\beta}$, so
 \begin{equation} \label{thm14relation}
-(s_\alpha s_\beta)^{m_{\alpha, \beta}} = 1. % TODO (*)
+(s_\alpha s_\beta)^{m_{\alpha, \beta}} = 1. \tag{\textasteriskcentered}
 \end{equation}
 Since we know $s_\alpha$ is an
 involution (i.e. $s_\alpha^2 = 1$), we have $m_{\alpha, \beta} = m_{\beta, \alpha}$.
@@ -86,14 +87,16 @@ The case $(i)$ can be written as
     s_{i+1} = s_i \dots s_{\kappa+i-1} s_{\kappa+i} \dots s_{i+2},
 \]
 or as
-\[
+\begin{equation} \label{thm14b}
     s_{i+1} s_i \dots s_{\kappa+i-1} s_{\kappa+i} \dots s_{i+2} = 1
-    \quad \quad \quad (\hat{i}) % TODO
-\]
-For the relation $(\hat{i})$, take the first $\kappa$ letters and take letters
+    \tag{\^{i}}
+\end{equation}
+For the relation \eqref{thm14b}, take the first $\kappa$ letters and take letters
 $2 \dots \kappa+1$,
 \[
-    s_{i+1} s_i \dots s_{i+\kappa-2} = s_i \dots s_{\kappa+i-1}
+    s_{i+1} s_i \dots s_{i+\kappa-2} = s_i \dots s_{\kappa+i-1}.
 \]
 
-\end{proof}
+(We continue the proof in the next lecture.)
+
+%\end{proof}
