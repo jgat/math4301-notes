@@ -1,0 +1,99 @@
+\section{Every finite reflection group is a Coxeter group}
+
+\begin{proof}[Proof of Theorem \ref{thm14}]
+We can fix a simple system $\Delta$ such that
+$W = \angleb{s_\alpha, \alpha \in \Delta \mid \text{``relations''}}$. We know
+that $s_\alpha s_\beta$ must have finite order, say $m_{\alpha,\beta}$, so
+\begin{equation} \label{thm14relation}
+(s_\alpha s_\beta)^{m_{\alpha, \beta}} = 1. % TODO (*)
+\end{equation}
+Since we know $s_\alpha$ is an
+involution (i.e. $s_\alpha^2 = 1$), we have $m_{\alpha, \beta} = m_{\beta, \alpha}$.
+We need to prove that any relation in $W$ follows from \eqref{thm14relation}.
+
+We begin by noting that any relation may be written as $s_1 \dots s_k = 1$
+(indeed, if $s_1 \dots s_i = s_k \dots s_{i+1}$, then this is equivalent to
+$s_1 \dots s_k = 1$).
+
+Now let ($R$) stand for the relation $s_1 \dots s_k = 1$ (where $s_i$ are simple
+reflections). Taking the determinant on either side gives $(-1)^k = 1$, so $k$
+is even.
+
+We will proceed by induction on $k$. For $k = 0$ we get a tautology.
+For $k = 2$ we get $s_1 s_2 = 1$, so $s_2 = s_1^{-1} = s_1$, so the only
+relations on two letters are simply that $s_\alpha^2 = 1$.
+
+Now assume $k \geq 4$ and define $\kappa = \frac{k}{2}$. Then ($R$) can be
+written as
+\[
+    \underbrace{(s_1 \dots s_{\kappa+1})}_{\kappa+1 \text{ letters}}
+    \underbrace{(s_{\kappa+2} \dots s_{2 \kappa})}_{\kappa-1 \text{ letters}} = 1,
+\]
+which is equivalent to
+\[
+    s_1 \dots s_{\kappa+1} = s_{2 \kappa} \dots s_{\kappa + 2}.
+\]
+The length of the word on the right is at most $\kappa-1$ so that the word on
+the left is {\em not} reduced. Hence we can apply the deletion condition (Theorem
+\ref{thm10}), so there exists a pair of indices $1 \leq i < j \leq \kappa+1$
+such that
+\[
+    s_i \dots s_{j-1} = s_{i+1} \dots s_j,
+\quad
+\text{i.e.}
+\quad
+    s_i \dots s_{j-1} s_j \dots s_{i+1} = 1.
+\]
+The word on the left has $2j-2i$ letters and $2 \leq 2(j-i) \leq 2\kappa = k$.
+
+{\em Case 1}: If $2j-2i < k$, then $s_i \dots s_{j-1} s_j \dots s_{i+1} = 1$
+follows from \eqref{thm14relation} (by the induction hypothesis), hence ($R$)
+can be written as
+\[
+    1 = s_1 \dots s_k = s_1 \dots s_i s_{i+1} \dots s_j s_{j+1} \dots s_k
+    = s_1 \dots s_i s_i \dots s_{j-1} s_{j+1} \dots s_k
+    = s_1 \dots \hat{s_i} \dots \hat{s_j} \dots s_k.
+\]
+By induction this follows from \eqref{thm14relation}.
+
+{\em Case 2}: $2j-2i=k$, i.e. $i=1$, $j=\kappa+1$. In this case we must have
+$s_1 \dots s_\kappa = s_2 \dots s_{\kappa+1}$. Write ($R$) as
+$s_2 \dots s_k s_1 = 1$ (left-multiply and right-multiply both sides by $s_1$)
+and repeat the same steps as before. Again, there are two cases to consider,
+Case $2^1$ and $2^2$, and again we are done in case $2^1$ and stuck in case
+$2^2$ for which $s_2 \dots s_{\kappa+1} = s_3 \dots s_{\kappa+2}$.
+
+Again, repeat the procedure, now on ($R$) written as $s_3 \dots s_k s_1 s_2 = 1$;
+we are stuck in the case of $2^{2^2}$ for which we get $s_3 \dots s_{\kappa+2}
+= s_4 \dots s_{\kappa+3}$.
+
+Continuing, we end up with the system of relations:
+\begin{align*}
+    (R) \quad \quad \quad s_1 \dots s_{2 \kappa} &= 1 \\
+    s_1 \dots s_{\kappa} &= s_2 \dots s_{\kappa+1} \\
+    s_2 \dots s_{\kappa+1} &= s_3 \dots s_{\kappa+2} \\
+    & \dots \\
+    s_i \dots s_{\kappa+i-1} &= s_{i+1} \dots s_{\kappa+i} \\
+    & \dots \\
+    s_\kappa \dots s_{2\kappa-1} &= s_{\kappa+1} \dots s_{2\kappa}
+\end{align*}
+Note the relation $s_i \dots s_{\kappa+i-1} = s_{i+1} \dots s_{\kappa+i}$ arises
+from $\underbrace{s_i \dots s_{2\kappa}}_{2\kappa-i+1 \text{ letters}}
+s_1 \dots s_{i+1} = 1$ we must have $\kappa+1 \leq 2\kappa-i+1$, so $i \leq \kappa$.
+
+The case $(i)$ can be written as
+\[
+    s_{i+1} = s_i \dots s_{\kappa+i-1} s_{\kappa+i} \dots s_{i+2},
+\]
+or as
+\[
+    s_{i+1} s_i \dots s_{\kappa+i-1} s_{\kappa+i} \dots s_{i+2} = 1
+    \quad \quad \quad (\hat{i}) % TODO
+\]
+For the relation $(\hat{i})$, take the first $\kappa$ letters and take letters
+$2 \dots \kappa+1$,
+\[
+    s_{i+1} s_i \dots s_{i+\kappa-2} = s_i \dots s_{\kappa+i-1}
+\]
+
+\end{proof}
