@@ -70,7 +70,7 @@ we are stuck in the case of $2^{2^2}$ for which we get $s_3 \dots s_{\kappa+2}
 
 Continuing, we end up with the system of relations:
 \begin{align*}
-    (R) \quad \quad \quad s_1 \dots s_{2 \kappa} &= 1 \\
+    s_1 \dots s_{2 \kappa} &= 1 \tag{$R$} \\
     s_1 \dots s_{\kappa} &= s_2 \dots s_{\kappa+1} \\
     s_2 \dots s_{\kappa+1} &= s_3 \dots s_{\kappa+2} \\
     & \dots \\
@@ -79,8 +79,9 @@ Continuing, we end up with the system of relations:
     s_\kappa \dots s_{2\kappa-1} &= s_{\kappa+1} \dots s_{2\kappa}
 \end{align*}
 Note the relation $s_i \dots s_{\kappa+i-1} = s_{i+1} \dots s_{\kappa+i}$ arises
-from $\underbrace{s_i \dots s_{2\kappa}}_{2\kappa-i+1 \text{ letters}}
-s_1 \dots s_{i+1} = 1$ we must have $\kappa+1 \leq 2\kappa-i+1$, so $i \leq \kappa$.
+from $s_i \dots s_{2\kappa} s_1 \dots s_{i+1} = 1$,
+where $s_i \dots s_{2\kappa}$ has $2\kappa-i+1$ letters, so
+we must have $\kappa+1 \leq 2\kappa-i+1$, so $i \leq \kappa$.
 
 The case $(i)$ can be written as
 \[
