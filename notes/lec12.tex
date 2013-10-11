@@ -1,4 +1,4 @@
-\section{Every finite reflection group is a Coxeter group}
+\section{Finite Reflection Groups are Coxeter Groups}
 
 %\begin{proof}[Proof of Theorem \ref{thm14}]
 {\em Proof of Theorem \ref{thm14}.}
@@ -71,12 +71,16 @@ we are stuck in the case of $2^{2^2}$ for which we get $s_3 \dots s_{\kappa+2}
 Continuing, we end up with the system of relations:
 \begin{align*}
     s_1 \dots s_{2 \kappa} &= 1 \tag{$R$} \\
-    s_1 \dots s_{\kappa} &= s_2 \dots s_{\kappa+1} \\
-    s_2 \dots s_{\kappa+1} &= s_3 \dots s_{\kappa+2} \\
+    s_1 \dots s_{\kappa} &= s_2 \dots s_{\kappa+1}
+    \tag{1 \textasteriskcentered\textasteriskcentered}\\
+    s_2 \dots s_{\kappa+1} &= s_3 \dots s_{\kappa+2}
+    \tag{2 \textasteriskcentered\textasteriskcentered}\\
     & \dots \\
-    s_i \dots s_{\kappa+i-1} &= s_{i+1} \dots s_{\kappa+i} \\
+    s_i \dots s_{\kappa+i-1} &= s_{i+1} \dots s_{\kappa+i}
+    \tag{$i$ \textasteriskcentered\textasteriskcentered}\\
     & \dots \\
     s_\kappa \dots s_{2\kappa-1} &= s_{\kappa+1} \dots s_{2\kappa}
+    \tag{$\kappa$ \textasteriskcentered\textasteriskcentered}
 \end{align*}
 Note the relation $s_i \dots s_{\kappa+i-1} = s_{i+1} \dots s_{\kappa+i}$ arises
 from $s_i \dots s_{2\kappa} s_1 \dots s_{i+1} = 1$,
@@ -92,11 +96,6 @@ or as
     s_{i+1} s_i \dots s_{\kappa+i-1} s_{\kappa+i} \dots s_{i+2} = 1
     \tag{\^{i}}
 \end{equation}
-For the relation \eqref{thm14b}, take the first $\kappa$ letters and take letters
-$2 \dots \kappa+1$,
-\[
-    s_{i+1} s_i \dots s_{i+\kappa-2} = s_i \dots s_{\kappa+i-1}.
-\]
 
 (We continue the proof in the next lecture.)
 
