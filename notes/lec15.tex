@@ -1,0 +1,88 @@
+\section{Lec 15}
+
+As another example of Lemma \ref{lem15}, consider $\widetilde{B}_n$:
+\[
+    C = \begin{pmatrix}
+        2 & -\sqrt{2} &  & \\
+        -\sqrt{2} & 2 & -1 & \\
+         & -1 & 2 & \ddots & \\
+         & & \ddots & \ddots & -1 & -1 \\
+         & & & -1 & 2 & 0 \\
+         & & & -1 & 0 & 2
+    \end{pmatrix}
+\]
+The following linear combination of rows is zero:
+\[
+    \sqrt{2} R_1 + 2 R_2 + 2 R_3 + \dots + 2 R_{n-1} + R_n + R_{n+1} = (0, 0, \dots, 0),
+\]
+so $\det C = 0$.
+
+{\bf Definition}: By a {\em subgraph} of a Coxeter graph $G$, we mean a graph
+obtained from $G$ by successively removing vertices (and the corresponding
+incident edges), and/or lowering labels, (including changing $m>2$ to $m=2$,
+hence removing an edge).
+
+% TODO examples
+
+\begin{proposition} \label{prop16}
+Let $G$ be a positive definite graph. Then all of its subgraphs are positive
+definite.
+\end{proposition}
+
+(We don't consider the empty subgraph)
+
+\begin{proof}
+Every subgraph $G'$ is obtained by successively removing vertices and/or
+lowering labels of $G$. Hence it suffices to consider the following two cases:
+\begin{enumerate}
+\item[(1)] $G'$ obtained from $G$ by removing a single vertex.
+\item[(2)] $G'$ obtained from $G$ by lowering a single label.
+\end{enumerate}
+
+In case (2), assume we lower label $m_{kl}$ to $m'_{kl}$, where
+$2 \leq m'_{kl} < m_{kl}$. Then $C_{ij} = C'_{ij}$ unless $(i,j)=(k,l)$ or
+$(i,j)=(l,k)$, and $C_{kl} = C_{lk} < C'_{kl} = C'_{lk}$. By contradiction,
+assume there exists a nonzero $x \in \R^r$ such that
+\[
+    \sum_{i,j} x_i C'_{ij} x_j \leq 0.
+\]
+Let $y := (|x_1|, \dots, |x_r|)$. Then, by the positive definiteness of $C$,
+\begin{align*}
+    0 &< \sum_{i,j} y_i C_{ij} y_j \\
+    &= \sum_{i,j} y_i C'_{ij} y_j +
+    \underbrace{2( \underbrace{C'_{kl} - C'_{lk}}_{<0}) y_k y_l}_{\leq 0} \\
+    &\leq \sum_{i,j} y_i C'_{ij} y_j \\
+    &= 2 \sum_{i} y_i^2 +
+    \underbrace{\sum_{i \neq j} y_i \underbrace{C'_{i,j}}_{\leq 0} y_j}_{\leq 0} \\
+    &\leq 2 \sum_{i} x_i^2 +
+    \sum_{i \neq j} x_i C'_{i,j} x_j \\
+    &= \sum_{i,j} x_i C'_{i,j} x_j
+\end{align*}
+
+In case (1), assume WLOG we have deleted the vertex labelled $r$. Then,
+$C'$ follows from $C$ by removing the $r^{\text{th}}$ (last) row and column.
+Hence $C'$ is positive definite (it is one of the principal minors of $C$).
+\end{proof}
+
+\begin{proposition} \label{prop17}
+The only potential Coxeter graphs corresponding to finite reflection groups are
+the following.
+\end{proposition}
+
+% TODO draw graphs
+
+That is, we will show that any graph not in this list must have one of the
+graphs from Lemma \ref{lem15} as a subgraph. It will remain to show that these
+graphs are indeed positive definite.
+
+\begin{proof}
+Because $\widetilde{D}_n$ is not an admissible subgraph, we can have at most
+one branch point (vertex of degree $>2$).
+Because $\widetilde{A}_{n-1}$ is not admissible, we cannot have cycles or
+$\infty$ labels.
+
+This leaves us with only two types of graphs: linear chains, and graphs with
+a single branch point.
+
+We continue the proof in the next lecture.
+\end{proof}
