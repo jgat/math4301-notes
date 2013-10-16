@@ -1,0 +1,96 @@
+\subsection{Proof cont'd}
+
+Consider the first case, where the graphs are linear chains:
+
+\begin{itemize}
+\item
+Because $\widetilde{G}_2$ is not an admissible subgraph, the only graph with a
+label 6 (or higher) is $I_2(6)$ (and $I_2(m)$ for $m > 6$).
+\item
+Because the two hyperbolic graphs are not admissible subgraphs, the only three
+graphs containing a label 5 are $I_2(5)$, $H_3$ or $H_4$.
+\item
+Because $\widetilde{C}_n$ are not admissible subgraphs, we can have at most
+one label 4. Because $\widetilde{F}_4$, the only graph that does not have a 4
+at the end of the chain is $F_4$, and the graphs with label 4 at the end are
+$B_n$.
+\item
+There is only one type of linear chain without labels: $A_{n-1}$.
+\end{itemize}
+
+Now, consider the second case, where the graph has a single branch point.
+
+\begin{itemize}
+\item
+Because $\widetilde{B}_n$ is not an admissible subgraph, all labels must be
+3 (i.e. unlabelled). Moreover, it is easy to see that we cannot rule out
+$D_n$.
+\item
+We are left with graphs that have at least two vertices on two of the branches,
+and at least one vertex in the remaining branch.     % TODO pic.
+
+Because of $\widetilde{E}_6$, one of the branches must have size 1.
+
+Because of $\widetilde{E}_7$, one of the branches must have size 2.
+
+Because of $\widetilde{E}_8$, the remaining branch has size at most 4. This
+gives us $E_6$, $E_7$ and $E_8$.
+\end{itemize}
+
+\qed
+
+\section{Lecture 16}
+
+\begin{theorem} \label{thm18}
+The finite reflection groups are classified by the graphs of Proposition
+\ref{prop17}.
+\end{theorem}
+
+%One method of proof is to proceed by induction, showing that all principal
+%minors are positive. For instance, by dropping a vertex of $B_n$, we arrive at
+%either $B_{n-1}$ or $A_{n-1}$ (depending on the labelling of the graph); by
+%dropping a vertex of $D_n$, we arrive at either $D_{n-1}$ or $A_{n-1}$; by
+%dropping a vertex of $E_8$, we arrive at either $E_7$, $D_7$ or $A_7$; etc.
+
+One can compute (inductively) the determinants of $C_G$ corresponding to
+the graph $G$. Since the principal minors can be recognised (by a clever labelling)
+as corresponding to $C_{G'}$ where $G'$ is a smaller graph in our list.
+(e.g. by dropping vertex $n$ from $D_n$, we are left with $A_{n-1}$, etc.)
+
+One finds that all determinants are positive. The actual values are:
+\begin{itemize}
+\item $\det A_{n-1} = n$
+\item $\det B_{n} = 2$
+\item $\det D_n = 4$
+\item $\det I_2(m) = 4 \sin^2 \frac{\pi}{m}$
+\item $\det H_3 = -2 + 8 \sin^2 \frac{\pi}{5}$
+\item $\det H_4 = -4 + 12 \sin^2 \frac{\pi}{5}$
+\item $\det F_4 = 1$
+\item $\det E_6 = 3$
+\item $\det E_7 = 2$
+\item $\det E_8 = 1$
+\end{itemize}
+
+However such a proof hides much of the beauty of our collection of graphs. In
+particular, each graph allows its spectrum to be fully determined in closed
+form. We will demonstrate this for type $A_{n-1}$.
+
+Recall the characterisation of positive definite matrices as those whose
+eigenvalues are all positive.
+
+We claim the matrix
+\[
+    C_{A_{n-1}} = \begin{pmatrix}
+    \dots
+    \end{pmatrix}
+\]
+has eigenvalues $\lambda(k) = 2 - 2 \cos \frac{\pi k}{n}$ for $k=1,2,\dots,n-1$
+with corresponding eigenvectors
+\[
+    v(k) = \begin{pmatrix}
+        \sin \frac{\pi k}{n} \\
+        \sin \frac{2 \pi k}{n} \\
+        \vdots \\
+        \sin \frac{(n-1) \pi k}{n}
+    \end{pmatrix}.
+\]
