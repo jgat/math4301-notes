@@ -1,0 +1,127 @@
+\section{Lecture 17}
+
+Consider the above claim. In particular,
+\[
+    0 < \lambda(1) < \dots < \lambda(n-1).
+\]
+\begin{proof}
+It suffices to check that $C v(k) = \lambda(k) v(k)$, i.e.
+\[
+    \sum_{j=1}^{n-1} C_{ij} v_j(k) = \lambda(k) v_i(k).
+\]
+If $A$ is the adjacency matrix of $A_{n-1}$, namely
+\[
+    \begin{pmatrix}
+        0 & 1 \\
+        1 & 0 & 1 \\
+          & 1 & \ddots & \ddots \\
+          &   & \ddots & 0 & 1 \\
+          &   &        & 1 & 0
+    \end{pmatrix}
+\]
+and $\mu(k) = 2 \cos \frac{\pi k}{n} = 2 - \lambda(k)$, then the eigenvalue
+equation becomes
+\[
+    \sum_{j=1}^{n-1} A_{ij} v_j(k) = \mu(k) v_i(k).
+\]
+Hence we must show that
+\[
+    \sum_{j=1}^{n-1} (\delta_{i+1,j} + \delta_{i-1,j}) \sin (j \theta)
+    = 2 \cos \theta \sin (i \theta),
+\]
+where $\theta = \frac{\pi k}{m}$ and $\delta_{x,y}$ is the Kronecker delta function.
+This simplifies to
+\[
+    \sin((i+1) \theta) + \sin ((i-1)\theta) = 2 \cos \theta \sin (i \theta).
+\]
+This follows from the identity $\sin (\alpha + \beta) + \sin (\alpha - \beta)
+= 2 \cos \beta \sin \alpha$.
+
+(Note that if $i=1$, then $\sin ((i-1) \theta) = 0$, so this is ok. Similarly,
+if $i=n-1$, then $\sin((i+1) \theta) = 0$, so this is also ok.)
+\end{proof}
+
+Remark: If we ask ourselves ``which graphs have largest eigenvalue greater than
+2?'', we will find that $A_{n-1}$, $D_n$, $E_6$, $E_7$, $E_8$ are the only ones.
+If we also allow graphs with largest eigenvalue equal to two, we also get the
+affine versions of these graphs.
+\\
+
+\subsection{Finite Coxeter Groups realised as Reflection Groups (I)}
+
+To complete our proof, we will explicitly realise each of the Coxeter groups in
+question as a finite reflection group.
+
+\begin{itemize}
+\item
+For $A_{n-1}$, we have already seen that we can take
+$V = \{v \in \R^n \mid v \cdot (\varepsilon_1 + \dots + \varepsilon_n) = 0\}$,
+$\Phi^+ = \{\varepsilon_i - \varepsilon_j \mid 1 \leq i < j \leq n \}$, and
+$\Delta = \{\varepsilon_i - \varepsilon_{i+1} \mid 1 \leq i \leq n-1 \}
+= \{\alpha_1, \dots, \alpha_n\}$. Then,
+\[
+    s_{\alpha_i}(\varepsilon_k) = \begin{cases}
+        \varepsilon_k & \text{if } k \neq i, i+1 \\
+        \varepsilon_{i+1} & \text{if } k = i \\
+        \varepsilon_{i} & \text{if } k = i+1 \\
+    \end{cases}
+\]
+This is enough to conclude that $W \cong S_n$.
+
+(Checking the Coxeter relations, e.g. that $s_{i} s_{i+1} s_{i} = s_{i+1} s_{i}
+s_{i+1}$, is left as an exercise.)
+
+\item
+For $B_n$, take
+$V = \R^n$, $\Phi^+ = \{\varepsilon_i \pm \varepsilon_j \mid 1 \leq i < j \leq n\}
+\cup \{\varepsilon_i \mid 1 \leq i \leq n\}$, and
+\[
+\Delta = \{\varepsilon_i - \varepsilon_{i+1} \mid 1 \leq i \leq n-1\} \cup
+\{\varepsilon_n\} = \{\alpha_1, \dots, \alpha_{n-1}, \alpha_n\}.
+\]
+Then, if $1 \leq i \leq n-1$, we again have
+\[
+    s_{\alpha_i}(\varepsilon_k) = \begin{cases}
+        \varepsilon_k & \text{if } k \neq i, i+1 \\
+        \varepsilon_{i+1} & \text{if } k = i \\
+        \varepsilon_{i} & \text{if } k = i+1 \\
+    \end{cases}
+\]
+and finally,
+\[
+    s_{\alpha_n}(\varepsilon_k) = \begin{cases}
+        \varepsilon_k & \text{if } k \neq n \\
+        -\varepsilon_n & \text{if } k = n \\
+    \end{cases}
+\]
+Then, $W \cong S_n \ltimes (\Z/2\Z)^n$, where each copy of $\Z/2\Z$ corresponds
+to a change of sign. Note that conjugating a sign change with a permutation
+will result in a sign change, so we indeed get a semidirect product.
+
+\item
+For $D_n$, take $V = \R^n$, $\Phi = \{\varepsilon_i \pm \varepsilon_j \mid
+1 \leq i < j \leq n\}$, and
+\[
+    \Delta = \{\varepsilon_i - \varepsilon_{i+1} \mid 1 \leq i \leq n-1\}
+    \cup \{\varepsilon_{n-1}, \varepsilon_n\}
+    = \{\alpha_1, \dots, \alpha_{n-1}, \alpha_n\}.
+\]
+Then, for $1 \leq i \leq n-1$, we again have
+\[
+    s_{\alpha_i}(\varepsilon_k) = \begin{cases}
+        \varepsilon_k & \text{if } k \neq i, i+1 \\
+        \varepsilon_{i+1} & \text{if } k = i \\
+        \varepsilon_{i} & \text{if } k = i+1 \\
+    \end{cases}
+\]
+Then,
+\[
+    s_{\alpha_n}(\varepsilon_k) = \begin{cases}
+        \varepsilon_k & \text{if } k \neq n-1, n \\
+        -\varepsilon_{n} & \text{if } k = n-1 \\
+        -\varepsilon_{n-1} & \text{if } k = n \\
+    \end{cases}
+\]
+So, $W \cong S_n \ltimes (\Z/2\Z)^{n-1}$ (effectively, we have lost one sign
+change).
+\end{itemize}
