@@ -1,0 +1,84 @@
+\section{Lecture 18}
+
+\subsection{Construction of $F_4$, $H_4$}
+
+Giving the construction for the exceptional reflection groups is a tedious
+linear algebra exercise. We will only consider $F_4$ and $H_4$.
+
+\begin{itemize}
+\item
+For $F_4$, we have
+\[
+    C = \begin{pmatrix}
+     2 &        -1 &         0 & 0 \\
+    -1 &         2 & -\sqrt{2} & 0 \\
+     0 & -\sqrt{2} &         2 & -1 \\
+     0 &         0 &        -1 & 2
+    \end{pmatrix}.
+\]
+Take $V = \R^+$,
+\[
+\Phi^+ = \{\varepsilon_i \mid 1 \leq i \leq 4 \} \cup
+\{\varepsilon_i \pm \varepsilon_j \mid 1 \leq i < j \leq 4 \} \cup
+\left\{\frac{1}{2} (\varepsilon_1 \pm \varepsilon_2 \pm \varepsilon_3 \pm
+\varepsilon_4)\right\},
+\]
+\[
+    \Delta = \left\{\varepsilon_2 - \varepsilon_3,
+               \varepsilon_3 - \varepsilon_4,
+               \varepsilon_4,
+               \frac{1}{2} (\varepsilon_1 - \varepsilon_2 - \varepsilon_3
+               - \varepsilon_4) \right\}
+    (=: \{\alpha_1, \alpha_2, \alpha_3, \alpha_4\})
+\]
+\item
+For $H_4$, we have the symmetry group of a regular solid in 4 dimensions which
+has 120 `faces' given by regular dodecahedra.
+A regular dodecahedron (one of the 5 platonic solids) has 12 pentagonal
+faces. The (parabolic) subgroup $H_3$ (of $H_4$) is the symmetry group of the
+regular icosahedron (another platonic solid consisting of 20 triangular
+faces).
+
+The root system of $H_4$ can again be realised in $\R^4$, $\Delta = \{\alpha_1,
+\alpha_2, \alpha_3, \alpha_4\}$, with
+\begin{align*}
+    \alpha_1 &= \left(\cos \theta, -\frac{1}{2}, \cos 2\theta, 0 \right) \\
+    \alpha_2 &= \left(-\cos \theta, -\frac{1}{2}, \cos 2\theta, 0 \right) \\
+    \alpha_3 &= \left(\frac{1}{2}, \cos 2\theta, -\cos \theta, 0 \right) \\
+    \alpha_4 &= \left(-\frac{1}{2}, -\cos \theta, 0, \cos \theta \right) \\
+\end{align*}
+where $\theta = \frac{\pi}{5}$.
+$\Phi^+$ has 30 roots, it would be a boring exercise to list them all.
+\end{itemize}
+
+\subsection{Quaternions}
+
+Much more interesting is that the root system of $H_4$ arises as a finite
+reflection subgroup of the quaternions.
+
+Hamilton wondered about higher dimensional analogues of the complex numbers.
+We now know there are only 4 normed division algebras over the reals, $\R$,
+$\C$, $\bbH$ (quaternions) and $\bbO$ (octonians).
+
+The quaternions are associative but not commutative; the octonians are neither
+associative nor commutative.
+
+The quaternions are a 4-dimensional $\R$-algebra (a 4-dimensional vector space
+over $\R$ equipped with a multiplication) with basis $\{1, i, j, k\}$, the
+usual addition and scalar multiplication, and with product determined by
+
+\begin{tabular}{c|cccc}
+$\times$ & $1$ & $i$ & $j$ & $k$ \\
+\hline
+$1$ & $1$ & $i$ & $j$ & $k$ \\
+$i$ & $i$ & $-1$ & $k$ & $-j$ \\
+$j$ & $j$ & $-k$ & $-1$ & $i$ \\
+$k$ & $k$ & $j$ & $-i$ & $-1$
+\end{tabular}
+
+Note that this table can be reconstructed from the identity
+\[
+    i^2 = j^2 = k^2 = ijk = -1.
+\]
+(The story goes that Hamilton's Eureka moment happened while taking a walk with
+his wife on the Brougham Bridge in 1843.)
