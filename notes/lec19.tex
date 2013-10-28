@@ -1,4 +1,6 @@
-\section{Lecture 19}
+\section{Quaternion Groups \& Lattices}
+
+\subsection{Every Even Quaternion Group is a Root System}
 
 {\bf Claim:} Let $G$ be a group of even order. Then $G$ contains an involution.
 
@@ -13,9 +15,34 @@ The surprising fact is that any subgroup $G$ of $\bbH$ of even order yields a
 root system.
 
 To see this, let $G$ be an even order (hence finite) subgroup of $\bbH$. For
-$z \in G$,
+$z \in G$, $z^r = 1$ for some finite $r$. Hence $||z||^r = 1$. But since
+$||z|| \in \R^+$, we must have $||z|| = 1$. In other words, all elements of $G$
+have norm $1$. Since $z^{-1} = \frac{\bar{z}}{||z||^2} = \bar{z}$, $G$ is
+closed under conjugation.
 
-% TODO ...
+Since $G$ has even order, it must contain an element of order 2. But
+$z^2 = (a^2-b^2-c^2-d^2) + 2a(bi+cj+dk) = 1$ implies
+\[
+    \begin{cases}
+        a^2 - b^2 - c^2 - d^2 = 1 \\
+        2ab = 0 \\
+        2ac = 0 \\
+        2ad = 0,
+    \end{cases}
+\]
+hence $a^2 = 1$ and $z = \pm 1$.
+Hence there is a unique element of order 2, namely $z = -1$. But,
+$(-1)z = z(-1) = -z$, so that if $G$ contains $z$ it must also contain $-z$.
+
+If $\alpha \in G$ and $s_{\alpha}(z) = -\alpha \bar{z} \alpha$ for $z \in G$
+then $s_\alpha(z) \in G$, i.e. $s_\alpha(G) = G$.
+Hence, $G$ satisfies the definition of a root system:
+\begin{itemize}
+\item If $z \in G$ then $-z \in G$, but no other multiples of $z$ are in $G$
+(since $||z|| = 1$ for all $z \in G$)
+\item $s_\alpha(G) = G$ for all $\alpha \in G$.
+\end{itemize}
+\qed
 
 Identifying $a+bi+cj+dk \in \bbH$ with $(a,b,c,d) \in \R^4$, then the previous
 result will give us a root system in $\R^4$. In the case of $H_4$,
@@ -29,7 +56,7 @@ result will give us a root system in $\R^4$. In the case of $H_4$,
     \right\}
 \end{align*}
 
-\subsection{Classification of Crystallographic Root Systems}
+\subsection{Crystallographic Root Systems \& Lattices}
 
 We finally turn to the classification of {\em crystallographic} root systems,
 for which $(\alpha, \beta^\vee) \in \Z$ for all $\alpha, \beta \in \Phi$.
