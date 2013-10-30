@@ -1,6 +1,29 @@
 \section{Structure of Finite Reflection Groups (II)}
 
-\subsection{Construction of $F_4$, $H_4$}
+\subsection{Construction of $I_2(m)$, $F_4$, $H_4$}
+
+\begin{itemize}
+\item
+For $I_2(m)$, with $\theta = \frac{\pi}{m}$, we take $V = \R^2$, the inner
+product $(\cdot, \cdot)$ as before,
+\[ \Phi^+ = \{(\cos k\theta, \sin
+k\theta) \; : \; k=0,\dots,m-1\}, \]
+\[ \Delta = \{(1,0), (-\cos \theta, \sin \theta)\} = \{\alpha_1, \alpha_2\}. \]
+Note that $(\cos k\theta, \sin k\theta) = \frac{\sin((k+1)\theta)}{\sin \theta}
+\alpha_1 + \frac{\sin k\theta}{\sin \theta} \alpha_2$.
+
+Note also that $s_{\alpha_1}(\varepsilon_1) = -\varepsilon_1$,
+$s_{\alpha_1}(\varepsilon_2) = \varepsilon_2$. By standard trig
+identities, we also have
+$s_{\alpha_2}(\varepsilon_1) = (-\cos 2\theta, \sin 2\theta)$,
+$s_{\alpha_2}(\varepsilon_2) = (\sin 2\theta, \cos 2\theta)$, so we can
+represent
+\[
+    s_{\alpha_1} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}, \quad
+    s_{\alpha_2} = \begin{pmatrix} -\cos 2\theta & \sin 2\theta \\
+        \sin 2\theta & \cos 2\theta \end{pmatrix}
+\]
+\end{itemize}
 
 Giving the construction for the exceptional reflection groups is a tedious
 linear algebra exercise. We will only consider $F_4$ and $H_4$.
@@ -83,11 +106,44 @@ Note that this table can be reconstructed from the identity
 (The story goes that Hamilton's Eureka moment happened while taking a walk with
 his wife on the Brougham Bridge in 1843.)
 
-For example, % TODO
+For example,
 \begin{align*}
-    (a_1 + a_2 i + a_3 j + a_4 k)(b_1 + b_2 i + b_3 j + b_4 k)
+    &(a_1 + a_2 i + a_3 j + a_4 k)(b_1 + b_2 i + b_3 j + b_4 k) \\
     &= (a_1 b_1 - a_2 b_2 - a_3 b_3 - a_4 b_4) \\
-    & \quad + ()i \\
-    & \quad + ()j \\
-    & \quad + ()k
+    & \quad + (a_1 b_2 + a_2 b_1 + a_3 b_4 - a_4 b_3)i \\
+    & \quad + (a_1 b_3 - a_2 b_4 + a_3 b_1 + a_4 b_2)j \\
+    & \quad + (a_1 b_4 + a_2 b_3 - a_3 b_2 + a_4 b_1)k.
 \end{align*}
+
+Conjugation in $\bbH$ is what you would expect:
+$\bar{z} = \overline{a + bi + cj + dk} = a - bi - cj - dk$.
+The {\em norm} $\in \R$ of $z \in \bbH$ is defined by
+\[
+    ||z|| = (z \bar{z})^{\frac{1}{2}} = \sqrt{a^2 + b^2 + c^2 + d^2}.
+\]
+Note the norm is multiplicative, $||zw|| = ||z|| \cdot ||w||$. Division in
+$\bbH$ is defined as $z^{-1} = \frac{\bar{z}}{||z||^2}$. The standard inner
+product in $\R^4$ can easily be translated to $\bbH$: for $v \in \R^4$,
+where $v = (a,b,c,d) \mapsto \tilde{v} = a+bi+cj+dk$,
+\[
+    (v, w) \mapsto \frac{1}{2} \left( \tilde{v} \overline{\tilde{w}}
+    + \tilde{w} \overline{\tilde{v}} \right)
+\]
+(check for yourself).
+Clearly, $||v||_{\R^4} = ||\tilde{v}||_{\bbH}$.
+
+{\em Claim:} Fix $\alpha \in \R^4$ such that $||\alpha|| = 1$ and let $s_\alpha$
+be the reflection in $H_\alpha$. Then, $s_\alpha(v) \mapsto - \tilde{\alpha}
+\tilde{v} \tilde{\alpha}$.
+
+\begin{proof}
+\begin{align*}
+    s_\alpha(v) = v - 2(v, \alpha) \alpha
+    & \mapsto \tilde{v} - (\tilde{v} \overline{\tilde{w}} + \tilde{\alpha}
+                \overline{\tilde{v}}) \tilde{\alpha} \\
+    & = \tilde{v} - \tilde{v} \overline{\tilde{\alpha}} \tilde{\alpha}
+        - \tilde{\alpha} \overline{\tilde{v}} \tilde{\alpha} \\
+    &= \tilde{v} - \tilde{v} - \tilde{\alpha} \overline{\tilde{v}} \tilde{\alpha} \\
+    &= -\tilde{\alpha} \overline{\tilde{v}} \tilde{\alpha}.
+\end{align*}
+\end{proof}
