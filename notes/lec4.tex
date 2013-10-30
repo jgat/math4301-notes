@@ -1,10 +1,82 @@
-\section{...?}
-% TODO
+\section{Affine Hyperplanes}
 
-At some point I'll write this up in \LaTeX, but for the time being:
+Apart from reflections, we also need translations. We denote by $t_\lambda$
+a translation by $\lambda \in V (= \R)$, such that
+\[
+    t_\lambda(\mu) = \lambda + \mu = t_\mu(\lambda).
+\]
+It is not difficult to see that translations are ``normalised'' by reflections,
+since
+\[
+    r_\alpha t_\lambda r_\alpha^{-1} = r_\alpha t_\lambda r_\alpha
+    = t_{r_\alpha(\lambda)}.
+\]
+\begin{proof}
+\[
+    r_\alpha t_\lambda r_\alpha (\mu) = r_\alpha (\lambda + r_\alpha(\mu))
+    = r_\alpha(\lambda) + r_\alpha^2(\mu) = r_\alpha(\lambda) + \mu.
+\]
+\end{proof}
 
-\begin{itemize}
-\item \url{http://jgat.github.io/math4301-notes/lec4-1.jpg}
-\item \url{http://jgat.github.io/math4301-notes/lec4-2.jpg}
-\item \url{http://jgat.github.io/math4301-notes/lec4-3.jpg}
-\end{itemize}
+A hyperplane that does not necessarily contain the origin is called an {\em
+affine} hyperplane. The affine hyperplane $H_{\alpha, \kappa}$ parallel to
+$H_\alpha = H_{\alpha, 0}$ is defined by the equation
+\[
+    H_{\alpha, \kappa} = \{\lambda \in V \mid (\lambda, \alpha) = \kappa\}.
+\]
+The distance between $H_{\alpha}$ and $H_{\alpha, \kappa}$ is given by
+\[
+    d(H_{\alpha}, H_{\alpha, \kappa}) = \frac{|(\alpha, \kappa)|}{||\alpha||^2}
+    = \frac{|\kappa|}{||\alpha||} = \frac{1}{2} |\kappa| \alpha^\vee.
+\]
+
+In fact, $H_{\alpha, \kappa} = H_{\alpha, 0} + \frac{1}{2} \kappa \alpha^\vee$.
+\begin{proof}
+Let $\lambda \in H_{\alpha, \kappa}$. We need to show that $\mu := \lambda
+- \frac{1}{2} \kappa \alpha^\vee \in H_{\alpha, 0}$. But,
+\[
+    (\mu, \alpha) = (\lambda, \alpha) - \frac{1}{2} \kappa (\alpha^\vee, \alpha)
+    = \kappa - \frac{1}{2} \kappa \cdot 2 = 0,
+\]
+so $\mu \in H_{\alpha}$.
+\end{proof}
+
+It is also easy to check the following formula for affine reflections:
+\[
+    r_{\alpha, \kappa}(\lambda) = \lambda - ( (\lambda, \alpha) - \kappa) \alpha^\vee.
+\]
+\begin{proof}
+Let $\lambda \in H_{\alpha, \kappa}$. Then,
+\[
+    r_{\alpha,\kappa}(\lambda) = \lambda - (\kappa - \kappa) \alpha^\vee = \lambda.
+\]
+Also,
+\[
+    r_{\alpha,\kappa}(0) = \kappa \alpha^\vee = 2 \left( \frac{1}{2}\kappa\alpha^\vee \right).
+\]
+\end{proof}
+
+More generally, $r_{\alpha,\kappa}(H_{\alpha,\tau}) = H_{\alpha,2\kappa-\tau}$.
+\begin{proof}
+Let $\lambda \in H_{\alpha,\tau}$. Then, $r_{\alpha, \kappa}(\lambda)
+= \lambda + (\kappa - \tau) \alpha^\vee$. Hence,
+\[
+    (r_{\alpha,\kappa}(\lambda), \alpha)
+    = (\lambda, \alpha) + (\kappa - \tau) (\alpha^\vee, \alpha)
+    = \tau + 2(\kappa - \tau) = 2\kappa - \tau.
+\]
+\end{proof}
+
+To describe $\widetilde{A}_1 = \angleb{s, t \mid s^2 = t^2 = 1}$, let $V = \R$
+and $\alpha = (1) = 1$. Write $H_k$ and $r_k$ for the affine hyperplane and
+affine reflection in the integer point $k$.
+
+{\em Claim:} Take $s = r_0$, $t = r_1$. Then $r_k = s(st)^k$ and $t_{2k}
+= (ts)^k$ for $k \in \Z$, so that $\widetilde{A}_1 = A_1 \ltimes T$, where
+$A_1 = \angleb{s \mid s^2 = 1} \simeq \Z_2$ and $T$ is the group of translations
+over $2\Z$.
+
+A large class of affine reflection groups (a special class of Coxeter groups)
+have this structure: $\widetilde{W} = W \ltimes T$ with $W$ a finite/non-affine
+reflection group and $T$ a lattice.
+
