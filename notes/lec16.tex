@@ -27,7 +27,7 @@ Because $\widetilde{B}_n$ is not an admissible subgraph, all labels must be
 $D_n$.
 \item
 We are left with graphs that have at least two vertices on two of the branches,
-and at least one vertex in the remaining branch.     % TODO pic.
+and at least one vertex in the remaining branch.
 
 Because of $\widetilde{E}_6$, one of the branches must have size 1.
 
@@ -81,7 +81,10 @@ eigenvalues are all positive.
 We claim the matrix
 \[
     C_{A_{n-1}} = \begin{pmatrix}
-    \dots
+    2 & -1 \\
+    -1 & 2 & \ddots \\
+    & \ddots & \ddots & -1 \\
+    & & -1 & 2
     \end{pmatrix}
 \]
 has eigenvalues $\lambda(k) = 2 - 2 \cos \frac{\pi k}{n}$ for $k=1,2,\dots,n-1$

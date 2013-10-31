@@ -20,9 +20,7 @@ so $\det C = 0$.
 {\bf Definition}: By a {\em subgraph} of a Coxeter graph $G$, we mean a graph
 obtained from $G$ by successively removing vertices (and the corresponding
 incident edges), and/or lowering labels, (including changing $m>2$ to $m=2$,
-hence removing an edge).
-
-% TODO examples
+hence removing an edge). Note that this may end up disconnecting the graph.
 
 \begin{proposition} \label{prop16}
 Let $G$ be a positive definite graph. Then all of its subgraphs are positive
@@ -69,7 +67,14 @@ The only potential Coxeter graphs corresponding to finite reflection groups are
 the following.
 \end{proposition}
 
-% TODO draw graphs
+\begin{center}
+\includegraphics[width=\textwidth]{img/finite-groups.png}
+\end{center}
+
+(Image via Wikipedia. We denote $I_2(n)$ instead of $I_n$. Note that $I_2(3)
+= A_2$, $I_2(4) = B_2$, $I_2(5) = H_2$, $I_2(6) = G_2$; in particular, we need
+not consider $H_2$ or $G_2$. Note that $A_n, B_n, D_n$ each contain $n$
+vertices.)
 
 That is, we will show that any graph not in this list must have one of the
 graphs from Lemma \ref{lem15} as a subgraph.

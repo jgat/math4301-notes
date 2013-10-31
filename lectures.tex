@@ -6,6 +6,8 @@
 \usepackage{amsthm}
 \usepackage[lmargin=3cm,rmargin=3cm]{geometry}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color}
 
 \usepackage{titlesec}
 \titleformat{\chapter}
@@ -26,6 +28,7 @@
 \newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbO}{\mathbb{O}}
 \newcommand{\angleb}[1]{\langle #1 \rangle}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 
 \newcommand{\thisurl}{http://jgat.github.io/math4301-notes/lectures.pdf}
 \newcommand{\sourceurl}{https://github.com/jgat/math4301-notes}
@@ -37,13 +40,12 @@ Notes taken by Jackson Gatenby\\
 MATH4301 Advanced Algebra\\
 The University of Queensland\\
 \\
-Version 0.20 $\alpha$}
+Version 1.0}
 
 \begin{document}
 \maketitle
 \tableofcontents
 
-%\input{notes/meta}
 
 \chapter{Introduction}
 
@@ -73,8 +75,8 @@ Version 0.20 $\alpha$}
 \input{notes/lec20}
 
 \appendix
-
-\chapter{Version History}
+\chapter{Appendix}
+\input{notes/meta}
 \input{notes/history}
 
 \end{document}

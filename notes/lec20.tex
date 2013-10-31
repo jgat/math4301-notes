@@ -65,22 +65,131 @@ Therefore, $\Lambda = \sum_{i=1}^r \Z \alpha_i$ is fixed by $W$.
 
 However, not just the angles are fixed, but also the relative length of the
 roots: $(\alpha, \beta^\vee) = 2\frac{||\alpha||}{||\beta||} \cos \theta \in \Z$,
-so roots have relative lengths $1, \sqrt{2}, \sqrt{3}$ (corresponding to
+so adjacent roots have relative lengths $1, \sqrt{2}, \sqrt{3}$ (corresponding to
 $m = 3, 4, 6$).
 
-Revisiting our previous description of root systems, we get
+Revisiting our previous description of root systems, we get the following:
+(note that we also annotate the vertices of the graph with the length of the
+root, in red)
+
 \begin{itemize}
-\item $A_{n-1}$, every root with length $\sqrt{2}$, and
-\[ \Lambda = \sum_{i=1}^{n-1} \Z (\varepsilon_i - \varepsilon_{i+1}) \]
-\item $B_n$, \dots (TODO) % TODO
-\item $C_n$, % TODO
+\item $A_{n-1}$,
+\[
+\begin{picture}(5,1)(-0.3,0.1)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){1}}
+\put(1,0.2){\circle*{0.2}}
+\put(1,0.2){\line(1,0){1}}
+\put(2,0.2){\circle*{0.2}}
+\put(2,0.2){\line(1,0){0.1}}
+\put(2.2,0.2){\line(1,0){0.1}}
+\put(2.4,0.2){\line(1,0){0.1}}
+\put(2.6,0.2){\line(1,0){0.1}}
+\put(2.8,0.2){\line(1,0){0.1}}
+\put(3,0.2){\circle*{0.2}}
+\put(3,0.2){\line(1,0){1}}
+\put(4,0.2){\circle*{0.2}}
+\put(-0.3,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(0.7,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(3.7,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(-0.1,-0.3){1}
+\put(3.7,-0.3){$n-1$}
+\end{picture}
+    \quad \quad \quad
+    \Lambda = \sum_{i=1}^{n-1} \Z (\varepsilon_i - \varepsilon_{i+1}).
+\]
+
+\item $B_n$,
+\[
+\begin{picture}(4.3,1)(-0.3,0.1)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){1}}
+\put(1,0.2){\circle*{0.2}}
+\put(1,0.2){\line(1,0){1}}
+\put(2,0.2){\circle*{0.2}}
+\put(2,0.2){\line(1,0){0.1}}
+\put(2.2,0.2){\line(1,0){0.1}}
+\put(2.4,0.2){\line(1,0){0.1}}
+\put(2.6,0.2){\line(1,0){0.1}}
+\put(2.8,0.2){\line(1,0){0.1}}
+\put(3,0.2){\circle*{0.2}}
+\put(3,0.2){\line(1,0){1}}
+\put(4,0.2){\circle*{0.2}}
+\put(-0.3,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(0.7,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(2.7,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(3.4,0.3){$4$}
+\put(3.9,0.4){\textcolor{red}{$1$}}
+\put(-0.1,-0.3){1}
+\put(3.9,-0.3){$n$}
+\end{picture}
+\quad \quad \quad
+    \Lambda = \sum_{i=1}^{n-1} \Z(\varepsilon_i - \varepsilon_{i+1})
+    + \Z \varepsilon_n.
+\]
+
+\item $C_n$,
+\[
+\begin{picture}(4.3,1)(-0.3,0.1)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){1}}
+\put(1,0.2){\circle*{0.2}}
+\put(1,0.2){\line(1,0){1}}
+\put(2,0.2){\circle*{0.2}}
+\put(2,0.2){\line(1,0){0.1}}
+\put(2.2,0.2){\line(1,0){0.1}}
+\put(2.4,0.2){\line(1,0){0.1}}
+\put(2.6,0.2){\line(1,0){0.1}}
+\put(2.8,0.2){\line(1,0){0.1}}
+\put(3,0.2){\circle*{0.2}}
+\put(3,0.2){\line(1,0){1}}
+\put(4,0.2){\circle*{0.2}}
+\put(-0.3,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(0.7,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(2.7,0.4){\textcolor{red}{$\sqrt{2}$}}
+\put(3.4,0.3){$4$}
+\put(3.9,0.4){\textcolor{red}{$2$}}
+\put(-0.1,-0.3){1}
+\put(3.9,-0.3){$n$}
+\end{picture}
+\quad \quad \quad
+    \Lambda = \sum_{i=1}^{n-1} \Z(\varepsilon_i - \varepsilon_{i+1})
+    + 2\Z \varepsilon_n.
+\]
 \end{itemize}
 
 Usually, we do not write the length of the roots in the diagram, instead
-$B_n$ and $C_n$ are distinguished using a Dynkin diagram: % TODO
+$B_n$ and $C_n$ are distinguished using a Dynkin diagram (image via Wikipedia):
 
+\begin{center}
+\includegraphics[width=0.7\textwidth]{img/dynkin.png}
+\end{center}
+
+A double-edge pointing from $\alpha$ to $\beta$ indicates that
+$\frac{||\alpha||}{||\beta||} = \sqrt{2}$. A triple-edge pointing from
+$\alpha$ to $\beta$ indicates that $\frac{||\alpha||}{||\beta||} = \sqrt{3}$
+(i.e. the arrow points from the larger root to the smaller root).
+A single edge indicates that $||\alpha|| = ||\beta||$.
+
+\newpage
+
+We also have,
 \begin{itemize}
-\item $D_n$
-\item $F_n$
-\item $G_2 = I_2(6)$
+\item $D_n$,
+\[
+    \Lambda = \sum_{i=1}^{n-1} \Z (\varepsilon_i - \varepsilon_{i-1})
+    + \Z(\varepsilon_{n-1} + \varepsilon_{n}).
+\]
+\item $F_4$,
+\[
+    \Lambda = \Z (\varepsilon_2 - \varepsilon_3)
+    + \Z(\varepsilon_3 - \varepsilon_4)
+    + \Z\varepsilon_4
+    + \frac{1}{2} \Z (\varepsilon_1 + \varepsilon_2 + \varepsilon_3 + \varepsilon_4).
+\]
+\item $G_2 = I_2(6)$,
+\[
+    \Lambda = \Z (\varepsilon_1 - \varepsilon_2)
+    + \Z (-2 \varepsilon_1 + \varepsilon_2 + \varepsilon_3).
+\]
 \end{itemize}

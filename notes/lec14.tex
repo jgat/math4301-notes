@@ -68,10 +68,41 @@ Before we do this, we list a collection of graphs that are not positive definite
 The following graphs are {\em not} positive definite.
 \end{lemma}
 
-% TODO
+\begin{center}
+\includegraphics[width=0.7\textwidth]{img/affine-groups.png}
 
-Note that cases a, b, c, d, e, f, g, h, j can be checked directly, and cases
-i, k, l, m must be checked for all $n$.
+\begin{picture}(3,0.7)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){1}}
+\put(1,0.2){\circle*{0.2}}
+\put(1,0.2){\line(1,0){1}}
+\put(2,0.2){\circle*{0.2}}
+\put(2,0.2){\line(1,0){1}}
+\put(3,0.2){\circle*{0.2}}
+\put(1.4,0.3){$5$}
+\end{picture}
+
+\begin{picture}(4,0.7)
+\put(0,0.2){\circle*{0.2}}
+\put(0,0.2){\line(1,0){1}}
+\put(1,0.2){\circle*{0.2}}
+\put(1,0.2){\line(1,0){1}}
+\put(2,0.2){\circle*{0.2}}
+\put(2,0.2){\line(1,0){1}}
+\put(3,0.2){\circle*{0.2}}
+\put(3,0.2){\line(1,0){1}}
+\put(4,0.2){\circle*{0.2}}
+\put(3.4,0.3){$5$}
+\end{picture}
+\end{center}
+
+(Image courtesy of Wikipedia. The final two are of `hyperbolic type'.)
+We will denote $\widetilde{A}_1 =
+\widetilde{I}_1$, $\widetilde{B}_2 = \widetilde{C}_2$. Note that
+$\widetilde{A}_n$, $\widetilde{B}_n$, $\widetilde{C}_n$, $\widetilde{D}_n$
+contain $n+1$ vertices.
+These four cases must be checked for all $n$, the rest can be directly
+checked.
 
 \begin{proof}
 For all of the graphs of type $\widetilde{G}$ (affine type) we claim that $\det
@@ -81,7 +112,13 @@ In each case this is an elementary exercise, and we only consider a few examples
 
 For $\widetilde{A}_{n-1}$, we have
 \[
-    C = % TODO
+    C = \begin{pmatrix}
+        2 & -1 & 0 & \cdots & -1 \\
+        -1 & 2 & -1 & \cdots & 0 \\
+        0 & -1 & 2 & & \vdots \\
+        \vdots & \vdots & & \ddots & -1 \\
+        -1 & 0 & \cdots & -1 & 2
+    \end{pmatrix}
 \]
 and since the sum of the rows is zero, so the determinant is zero.
 Note that for an arbitrary $n \times n$ circulant matrix, i.e. one which can
@@ -90,5 +127,8 @@ $(c_0, c_1, \dots, c_{n-1})^t$, we have
 \[
     \det C = \prod_{k=0}^{n-1} \sum_{j=0}^{n-1} c_j e^{\frac{2\pi i \cdot jk}{n}}.
 \]
-For us, $c_0 = 2$, $c_1 = c_{n-1} = -1$, and other $c_i = 0$.
+For us, $c_0 = 2$, $c_1 = c_{n-1} = -1$, and other $c_i = 0$, so
+\[
+    \det C = \prod_{k=0}^{n-1} \left(2-2 \cos \frac{2 \pi k}{n}\right) = 0.
+\]
 \end{proof}
